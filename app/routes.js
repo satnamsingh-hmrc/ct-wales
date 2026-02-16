@@ -5,6 +5,8 @@
 const govukPrototypeKit = require('govuk-prototype-kit')
 const router = govukPrototypeKit.requests.setupRouter()
 
+const config = require('./config.js'); console.log("CONFIG FROM ROUTES:", config);
+
 router.use((req, res, next) => {
   if (req.query.languagePreference) {
     req.session.data.languagePreference = req.query.languagePreference
